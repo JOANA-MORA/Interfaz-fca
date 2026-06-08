@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportar Falla — SGRI FCA</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .success-banner {
+      display: none;
+      background: var(--green-light);
+      color: var(--green);
+      border: 1px solid #c0dd97;
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      align-items: center;
+      gap: 10px;
+    }
+    .mis-reportes { margin-top: 28px; }
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-brand">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8">
+      <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+    </svg>
+    SGRI — Facultad de Contaduría y Administración
+  </div>
+  <div class="topnav-user">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    Alumno — Juan Pérez
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+  </div>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">Mi cuenta</div>
+    <a href="dashboard.html" class="nav-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Inicio
+    </a>
+    <a href="reportar-falla.html" class="nav-item active">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Reportar falla
+    </a>
+    <a href="#" class="nav-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Mis reportes
+    </a>
+    <a href="login.html" class="nav-item" style="color: var(--red);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Cerrar sesión
+    </a>
+  </aside>
+
+  <main class="main">
+    <div class="page-header">
+      <h1 class="page-title">Reportar falla</h1>
+      <p class="page-subtitle">Completa el formulario para notificar una incidencia en un equipo</p>
+    </div>
+
+    <div class="success-banner" id="success">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      Reporte enviado correctamente. El técnico ha sido notificado y atenderá la falla a la brevedad.
+    </div>
+
+    <div class="card" style="max-width: 680px;">
+      <h2 style="font-size:14px;font-weight:600;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--gray-200);">Nueva incidencia</h2>
+
+      <div class="row-2">
+        <div class="form-group">
+          <label class="form-label">Laboratorio *</label>
+          <select class="form-control" id="lab">
+            <option value="">Selecciona un laboratorio</option>
+            <option>Laboratorio 1 — Planta alta</option>
+            <option>Laboratorio 2 — Planta baja</option>
+            <option>Laboratorio 3 — Edificio B</option>
+            <option>Laboratorio 4 — Edificio C</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Número de equipo *</label>
+          <select class="form-control" id="equipo">
+            <option value="">Selecciona un equipo</option>
+            <option>PC-LAB2-01</option>
+            <option>PC-LAB2-02</option>
+            <option>PC-LAB2-03</option>
+            <option>PC-LAB2-04</option>
+            <option>PC-LAB2-05</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="form-group">
+          <label class="form-label">Tipo de falla *</label>
+          <select class="form-control" id="tipo">
+            <option value="">Selecciona el tipo</option>
+            <option>Hardware</option>
+            <option>Software</option>
+            <option>Conectividad / Red</option>
+            <option>Periféricos</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Prioridad *</label>
+          <select class="form-control" id="prioridad">
+            <option value="">Selecciona la prioridad</option>
+            <option>Alta — Equipo no funciona</option>
+            <option>Media — Funciona con limitaciones</option>
+            <option>Baja — Falla menor</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Descripción de la falla *</label>
+        <textarea class="form-control" id="descripcion" placeholder="Describe con detalle la falla: qué ocurre, cuándo empezó, si ocurre constantemente o intermitentemente..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Evidencia fotográfica (opcional)</label>
+        <div style="border: 1.5px dashed var(--gray-200); border-radius: var(--radius); padding: 20px; text-align: center; color: var(--gray-400); font-size: 13px; cursor: pointer;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:block;margin:0 auto 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Arrastra una imagen aquí o <span style="color:var(--blue-mid);">selecciona un archivo</span>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;justify-content:flex-end;padding-top:12px;border-top:1px solid var(--gray-200);">
+        <button class="btn btn-ghost" onclick="limpiar()">Cancelar</button>
+        <button class="btn btn-primary" onclick="enviarReporte()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Enviar reporte
+        </button>
+      </div>
+    </div>
+
+    <div class="mis-reportes">
+      <h2 style="font-size:15px;font-weight:600;margin-bottom:14px;">Mis reportes anteriores</h2>
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>ID</th><th>Equipo</th><th>Tipo</th><th>Prioridad</th><th>Estado</th><th>Fecha</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-muted">#F-001</td>
+                <td>PC-LAB2-05</td>
+                <td>Hardware</td>
+                <td><span class="badge badge-alta">Alta</span></td>
+                <td><span class="badge badge-proceso">En proceso</span></td>
+                <td class="text-muted">05/06/2025</td>
+              </tr>
+              <tr>
+                <td class="text-muted">#F-003</td>
+                <td>PC-LAB3-08</td>
+                <td>Software</td>
+                <td><span class="badge badge-baja">Baja</span></td>
+                <td><span class="badge badge-resuelto">Resuelto</span></td>
+                <td class="text-muted">03/06/2025</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  function enviarReporte() {
+    const lab = document.getElementById('lab').value;
+    const equipo = document.getElementById('equipo').value;
+    const tipo = document.getElementById('tipo').value;
+    const prioridad = document.getElementById('prioridad').value;
+    const desc = document.getElementById('descripcion').value;
+
+    if (!lab || !equipo || !tipo || !prioridad || !desc) {
+      alert('Por favor completa todos los campos obligatorios.');
+      return;
+    }
+
+    const banner = document.getElementById('success');
+    banner.style.display = 'flex';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    limpiar();
+  }
+
+  function limpiar() {
+    document.getElementById('lab').value = '';
+    document.getElementById('equipo').value = '';
+    document.getElementById('tipo').value = '';
+    document.getElementById('prioridad').value = '';
+    document.getElementById('descripcion').value = '';
+  }
+</script>
+</body>
+</html>
